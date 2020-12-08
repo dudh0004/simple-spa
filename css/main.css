@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap');
+
+*,
+*::before,
+*::after 
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html 
+{
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+body 
+{
+  min-height: 100vh;
+  background-color:hsl(194, 87%, 67%);
+}
+
+/*******************
+  header and search
+*******************/
+
+header 
+{
+  background-color: hsl(195, 100%, 27%);
+  color: hsl(20, 40%, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 15vh;
+  font-size: 1rem;
+  border-bottom: 0.5rem solid hsl(174, 9%, 23%)	 ;
+}
+
+header h1,
+header form 
+{
+  padding: 1rem;
+}
+
+header h1 
+{
+  text-shadow: 2px 2px 2px hsl(194, 62%, 8%);
+}
+
+header form 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+#search 
+{
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.25rem 1rem;
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  min-width: 30ch;
+}
+
+#btnSearch .iconic 
+{
+  height: 22px;
+  width: 22px;
+}
+
+#btnSearch .iconic * 
+{
+  stroke:hsl(194, 45%, 58%);
+  fill:hsl(195, 100%, 27%);
+}
+
+#btnSearch.pulse 
+{
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: backwards;
+}
+
+#btnSearch 
+{
+  border-radius: 0.5rem;
+  margin-left: -2.2rem;
+  border: none;
+  background-color: white;
+}
+
+::placeholder
+{
+  color: hsl(195, 100%, 27%);
+}
+
+/*******************
+  content area
+*******************/
+#instructions 
+{
+  display: none;
+}  
+
+#instructions p
+{
+  text-align: center;
+} 
+
+#instructions h2
+{
+  text-align: center;
+} 
+
+#actors 
+{
+  display: none;
+} 
+
+#media 
+{
+  display: none;
+}  
+
+#instructions.active, 
+#actors.active,
+#media.active
+{
+  display: block;
+} 
+
+#instructions h2, 
+#actors h2,
+#media h2
+{
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: hsl(195, 100%, 27%);
+  padding: 1rem;
+}  
+
+.content p 
+{
+  padding: 0 1rem;
+  font-size: .8rem;
+  margin: 1rem 0;
+  color: hsl(195, 100%, 27%);
+}
+
+#actors .content
+{
+  margin: 50px 300px 0px 0px;
+  width: 100%;
+  background-color: hsl(194, 87%, 67%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; 
+  gap: 2rem;
+}
+
+.actorData 
+{
+  width: 440px;
+  height: 220px; 
+  background-color: hsl(194, 63%, 45%);
+  border: 1px solid white;
+  display: grid;
+  grid-template-areas: 'actor_details name' 'actor_details popularity'; 
+  grid-template-columns: 50% 50%; 
+} 
+
+.actorData:hover
+{
+  transform: translateY(-.5rem);
+}
+
+.actorData .image
+{
+  grid-area: actor_details; 
+  width: 80%;
+  height: 220px;
+  margin-top: -1px;
+  border: 2px solid white
+}
+
+.actor_details .name 
+{
+  margin-left: -50px;
+  grid-area: name;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  color: hsl(198, 26%, 7%);
+}
+
+.actor_details .popularity 
+{
+  grid-area: email;
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-left: -50px;
+  padding: 0.4rem 1rem;
+  color: hsl(198, 26%, 7%);
+}
+
+h3
+{
+  font-size: 1rem;
+  color: hsl(198, 26%, 7%)
+}   
+
+#media .content 
+{
+  width: 100%;
+  background-color: hsl(194, 87%, 67%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; 
+  gap: .5rem;
+}
+
+.mediaDetails .mediaImage
+{
+  grid-area: media_details;  
+  background-color:hsl(194, 63%, 45%); 
+  width: 70%;
+  height: 218px;
+}
+
+.mediaDetails
+{
+  width: 400px;
+  height: 220px; 
+  background-color:hsl(194, 63%, 45%);
+  border: 1px solid white;
+  display: grid;
+  grid-template-areas: 'media_details para' 'media_details date'; 
+  grid-template-columns: 50% 50%;
+}
+
+.mediaDetails .para 
+{
+  margin-left: -50px;
+  grid-area: para;
+  font-size: 1.2rem;
+  font-weight: 500; 
+  color: hsl(198, 26%, 7%);
+}
+
+.mediaDetails .date 
+{
+  grid-area: date;
+  margin-left: -50px;
+  margin-top: -10px;
+  font-size: 1rem;
+  font-weight: 300; 
+  color: hsl(198, 26%, 7%);
+}
+
+#backtoActors{
+  width: 150px;
+  font-size: 2rem;
+  background-color:hsl(194, 63%, 45%);
+  color: hsl(198, 26%, 7%);
+}
+
+/***********************
+footer
+***********************/
+#footer
+{
+  display: none;
+}
+
+#footer.footer 
+{
+  display: block;
+}
+
+#footer img
+{
+  position: fixed; 
+  background-color:  hsl(195, 100%, 27%);
+  width: 100%;
+  height: 6rem;
+  bottom: 0;
+}   
+
+/***********************
+  Effects
+***********************/
+@keyframes pulse 
+{
+  0% 
+  {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% 
+  {
+    transform: scale(1.2);
+    opacity: 0.64;
+  }
+
+  100% 
+  {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/************************
+  Media Queries
+************************/
+@media all and (min-width: 500px) 
+{
+  #backtoActors
+  {
+    position: absolute;
+    margin-top: -100px;
+    margin-right: -500px;
+  }
+
+  h3
+  {
+    font-size: 1.2rem;
+  }
+}
+
+@media all and (min-width: 800px) 
+{
+
+  header 
+  {
+    font-size: 1.2rem;
+    flex-direction: row;
+  }
+
+  h3
+  {
+    font-size: 1.5rem;
+    color: hsl(198, 26%, 7%);
+  }
+
+  #search 
+  {
+    max-width: 30vw;
+  }
+
+  #actors.active,
+  #media.active 
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  #media h2
+  {
+    margin-top: 0px;
+    margin-left: 100px;
+    font-size: 12rem;
+    color: hsla(20, 10%, 30%, 0.32);
+    position: relative;
+    writing-mode: vertical-lr;
+  }
+
+  #instructions h2 
+  {
+    font-size: 3rem;
+  }  
+
+  .content p 
+  {
+    font-size: 1rem;
+  }
+
+  #actors h2 
+  {
+    font-size: 12rem;
+    color: hsla(20, 10%, 30%, 0.32);
+    position: relative;
+    writing-mode: vertical-lr; 
+  }
+  #backtoActors
+  {
+    left: 0;
+  }
+
+}
+
+@media all and (min-width: 1000px) 
+{
+  
+  header 
+  {
+    font-size: 2rem;
+  }
+
+  #search 
+  {
+    font-size: 1.5rem;
+  }
+
+  #btnSearch .iconic 
+  {
+    height: 42px;
+    width: 42px;
+  }
+
+  h3
+  {
+    margin-top: 0px;
+    width: 100%;
+    height: 4rem;
+    font-size: 2rem;
+  }
+
+  #backtoActors
+  {
+    left: 0;
+  }
+
+  #media .content 
+  {
+    margin-left: -1400px;
+    margin-top: 100px;
+  }
+}
