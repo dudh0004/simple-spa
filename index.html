@@ -12,14 +12,24 @@
     <header>
       <h1>Actors &amp; Shows</h1>
       <form name="form">
-        <input type="search" id="search" value="" name = "search" placeholder="Actor Name" />
+        <input type="search" id="search" value="" name = "search" placeholder="Actor Name" required />
         <button id="btnSearch" class="pulse">
           <img data-src="./img/magnifying-glass.svg" class="iconic" />
         </button>
       </form>
+      <div id="sorting" class="sorting">
+        <p>Sort By :</p>
+        <p class="actorName">Name</p>
+        <p class="actorRating">Popularity</p>
+      </div>
     </header>
+
     <main>
+      <div id="alert">
+        <p>please enter an actor name!</p>
+      </div>
       <section id="instructions">
+        
         <h2>How to Start</h2>
         <div class="content">
           <p>
