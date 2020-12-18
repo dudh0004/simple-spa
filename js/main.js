@@ -251,7 +251,7 @@ const SORT = {
       r = actor.profile_path;
       SORT.rating.push({popularity: p, name : n, profile_path: r});
     })
-    console.log('cfghvbn',SORT.rating);
+    console.log(SORT.rating);
 
     let sorting = SORT.dosort(SORT.rating, "popularity");
   },
